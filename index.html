@@ -32,12 +32,14 @@
 
     var map = L.map('map',{
     center: [50, 50],
-    zoom: 10
+    zoom: 4.4,
+    minZoom: 4.4,
+    maxZoom: 10
     });
     
-    var imageUrl = 'https://drive.google.com/uc?id=1n0NYNEv7PXVoySssjxsCIKUnEvXCTgXM', imageBounds = [[100, 100],[0, 0]];
+    var imageUrl = 'https://lh5.googleusercontent.com/ezZgkhV77WwCzCFFcHJWt0pHgI_kEbVBDor-km_solNUnunHWuXZPU0nDqm7RGoUEWg=w2400';
     
-    L.imageOverlay(imageUrl, imageBounds).addTo(map);
+    L.imageOverlay(imageUrl).addTo(map);
 
 </script>
 
