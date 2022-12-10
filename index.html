@@ -32,11 +32,12 @@
 
     var map = L.map('map',{
     center: [50, 50],
-    zoom: 15
+    zoom: 10
     });
-
-    L.tileLayer('https://drive.google.com/uc?id=1n0NYNEv7PXVoySssjxsCIKUnEvXCTgXM', {
-    maxZoom: 19}).addTo(map);
+    
+    var imageUrl = 'https://drive.google.com/uc?id=1n0NYNEv7PXVoySssjxsCIKUnEvXCTgXM', imageBounds = [[0, 0],[100, 100]];
+    
+    L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
 </script>
 
