@@ -35,7 +35,8 @@
     zoom: 15
     });
 
-    L.tileLayer('https://drive.google.com/uc?id=1zEt3wSgM7HZ4LCGJ9u0AuQekJJtpQCmo').addTo(map);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19).addTo(map);
 
 </script>
 
