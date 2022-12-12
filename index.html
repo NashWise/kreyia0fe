@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <html>
 
 <head>
@@ -8,9 +6,13 @@
      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
      crossorigin=""/>
 
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    <script type="text/javascript" src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
      crossorigin=""></script>
+	 
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gokertanrisever/leaflet-ruler@master/src/leaflet-ruler.css" integrity="sha384-P9DABSdtEY/XDbEInD3q+PlL+BjqPCXGcF8EkhtKSfSTr/dS5PBKa9+/PMkW2xsY" crossorigin="anonymous">  
+	<script type="text/javascript" src="https://rawcdn.githack.com/NashWise/kreyia0fe/4b17ca3d7e9c5186bca7cdc8610410738825d841/src/leaflet.ruler-kanka.js"></script>
+	
 
 <style>
 #map {
@@ -25,22 +27,41 @@
 </head>
 
 <body>
-
+	
     <div id="map"></div>
 
-<script>
+<script type="text/javascript">
 
     var map = L.map('map',{
-    center: [50, 50],
-    zoomDelta: 0.1,
-    minZoom: 4.4,
-    maxZoom: 10
+    center: [93.9125, 187.5],
+	crs: L.CRS.Simple,
+	noWrap: true,
+	dragging: true,
+	tap: false,
+	distance: 1,
+	minZoom: 2,
+	maxZoom: 10,
+	zoom: 2
     });
+	
     
-    var imageUrl = 'https://cdn.discordapp.com/attachments/766628305138221058/1051213013979500635/Kreyia_2022-12-11-02-59.png';
+    var imageUrl = 'https://rawcdn.githack.com/NashWise/kreyia0fe/c89bbb0bc9e3188f4a80e5e9cd4f3cb70cad5ead/maps/Kreyia%202022-12-11-01-41.svg',
+	imageBounds =	[[0, 0],[187.825, 375.8]];
     
-    L.imageOverlay(imageUrl).addTo(map);
-
+    L.imageOverlay(imageUrl, imageBounds).addTo(map);
+	
+	var options = {
+          position: 'topleft',
+          lengthUnit: {
+            factor: 0.0976789050194747,   
+            display: 'Miles',
+            decimal: 2,
+			lable: 'Distance:'
+          }
+        };
+	L.control.ruler(options).addTo(map);
+	
+	
 </script>
 
 </body>
